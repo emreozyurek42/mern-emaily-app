@@ -5,8 +5,10 @@ const passport = require('passport');
 const bodyParser = require('body-parser');
 const auth = require('./routes/auth');
 const billing = require('./routes/billing');
+const survey = require('./routes/survey');
 const keys = require('./config/keys');
 require('./models/User');
+require('./models/Survey');
 require('./services/passport');
 
 
@@ -29,6 +31,7 @@ app.use(passport.session());
 
 app.use('/auth', auth);
 app.use('/billing', billing);
+app.use('/survey', survey);
 
 
 
