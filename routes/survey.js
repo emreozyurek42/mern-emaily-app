@@ -1,14 +1,14 @@
+const mongoose = require('mongoose');
 const passport = require('passport');
 const express = require('express');
 const router = express.Router();
-const mongoose = require('mongoose');
 const requireLogin = require('../middlewares/requireLogin');
 const requireCredits = require('../middlewares/requireCredits');
 const Mailer = require('../services/Mailer');
 const surveyTemplate = require('../services/emailTemplates/surveyTemplate');
 
 const Survey = require('../models/Survey');
-
+//const Survey = mongoose.model('surveys');
 router.get('/api/surveys', (req, res) => {
    res.send('Thanks for voting!');
 });
